@@ -1,19 +1,15 @@
 import os
-
 import requests
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 app = FastAPI(title="CodeMind AI Service")
 
-# Frontend URLs
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-        "http://localhost:5174",
-    ],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -26,16 +22,12 @@ class ChatRequest(BaseModel):
 
 @app.get("/")
 def root():
-    return {
-        "message": "CodeMind AI Service is running"
-    }
+    return {"message": "CodeMind AI Service is running"}
 
 
 @app.get("/health")
 def health():
-    return {
-        "status": "healthy"
-    }
+    return {"status": "healthy"}
 
 
 @app.post("/chat")
@@ -60,19 +52,49 @@ You help users with:
 - Data Structures and Algorithms
 - Software Engineering
 
-Always provide clear, accurate and professional answers.
+Always answer clearly, accurately and professionally.
 
 User:
 {request.message}
 """
 
-    ollama_url = os.getenv(
-        "OLLAMA_URL",
-        "http://localhost:11434/api/generate"
-    )
+    # Production: Groq
+    groq_key = os.getenv("GROQ_API_KEY")
 
+    if groq_key:
+        response = requests.post(
+            "https://api.groq.com/openai/v1/chat/completions",
+            headers={
+                "Authorization": f"Bearer {groq_key}",
+                "Content-Type": "application/json",
+            },
+            json={
+                "model": "llama-3.3-70b-versatile",
+                "messages": [
+                    {
+                        "role": "user",
+                        "content": prompt,
+                    }
+                ],
+                "temperature": 0.3,
+            },
+            timeout=120,
+        )
+
+        response.raise_for_status()
+
+        result = response.json()
+
+        return {
+            "response": result["choices"][0]["message"]["content"]
+        }
+
+    # Local development: Ollama
     response = requests.post(
-        ollama_url,
+        os.getenv(
+            "OLLAMA_URL",
+            "http://localhost:11434/api/generate",
+        ),
         json={
             "model": "llama3.2",
             "prompt": prompt,
@@ -88,6 +110,6 @@ User:
     return {
         "response": result.get(
             "response",
-            "Sorry, I couldn't generate a response."
+            "Sorry, I couldn't generate a response.",
         )
     }
