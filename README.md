@@ -24,6 +24,7 @@ CodeMind is an AI-powered developer assistant designed to improve coding product
 
 It allows developers to:
 <img width="1600" height="754" alt="WhatsApp Image 2026-08-07 at 14 31 03" src="https://github.com/user-attachments/assets/ddc9597c-2a93-4c9d-b13e-0e81442d470f" />
+
 - 💬 Chat with AI for programming help
 - 🔍 Analyze and explain code
 - 🐞 Debug errors
@@ -36,8 +37,10 @@ The project is built with a modern full-stack architecture using React, FastAPI,
 ---
 
 # ✨ Features
-<img width="1600" height="754" alt="WhatsApp Image 2026-08-07 at 14 31 03" src="https://github.com/user-attachments/assets/f0463145-0d8c-4243-a431-97897ffbd8da" />
-<img width="1600" height="754" alt="WhatsApp Image 2026-08-07 at 14 31 03" src="https://github.com/user-attachments/assets/9502487d-1eb5-4987-b6cd-f03afb93c613" />
+<img width="868" height="255" alt="Screenshot 2026-08-07 225253" src="https://github.com/user-attachments/assets/ac6ad69a-a62a-4334-ab3f-23eab7c64ec4" />
+
+<img width="1165" height="722" alt="Screenshot 2026-08-07 234408" src="https://github.com/user-attachments/assets/77e8e010-5c5a-47d2-b983-8d8017fa27be" />
+
 - 🤖 AI Chat Assistant
 - 🧠 Code Analysis
 - 🐞 Bug Detection
