@@ -193,27 +193,6 @@ GROQ_API_KEY=your_groq_api_key
 | POST | `/rag/search` | Search Documents |
 | GET | `/health` | Health Check |
 
----
-
-# 📸 Screenshots
-
-## 🏠 Home Dashboard
-
-![Dashboard](screenshots/dashboard.png)
-
----
-
-## 💬 AI Coding Assistant
-
-![AI Chat](screenshots/chat.png)
-
----
-
-## 🧠 Code Analysis
-
-![Analysis](screenshots/analysis.png)
-
----
 
 # 🔮 Future Improvements
 
@@ -259,11 +238,11 @@ git push origin feature-name
 
 # 👨‍💻 Author
 
-**Your Name**
+**IMMADI MANIKANTA**
 
-GitHub: https://github.com/yourusername
+GitHub: https://github.com/IMMADIMANI
 
-LinkedIn: https://linkedin.com/in/yourprofile
+LinkedIn: https://www.linkedin.com/in/manikanta-immadi-304059273/
 
 ---
 
