@@ -1,10 +1,13 @@
+import os
+
+import requests
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-import requests
 
 app = FastAPI(title="CodeMind AI Service")
 
+# Frontend URLs
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
@@ -23,20 +26,23 @@ class ChatRequest(BaseModel):
 
 @app.get("/")
 def root():
-    return {"message": "CodeMind AI Service is running"}
+    return {
+        "message": "CodeMind AI Service is running"
+    }
 
 
 @app.get("/health")
 def health():
-    return {"status": "healthy"}
+    return {
+        "status": "healthy"
+    }
 
 
 @app.post("/chat")
 def chat(request: ChatRequest):
-    prompt = f"""
-You are CodeMind AI.
 
-You are an expert software engineer.
+    prompt = f"""
+You are CodeMind AI, an expert software engineering assistant.
 
 You help users with:
 - Python
@@ -49,27 +55,39 @@ You help users with:
 - Machine Learning
 - AI
 - Git
-- APIs
+- REST APIs
 - Debugging
-- DSA
+- Data Structures and Algorithms
+- Software Engineering
 
-Always answer professionally and clearly.
+Always provide clear, accurate and professional answers.
 
 User:
 {request.message}
 """
 
+    ollama_url = os.getenv(
+        "OLLAMA_URL",
+        "http://localhost:11434/api/generate"
+    )
+
     response = requests.post(
-        "http://localhost:11434/api/generate",
+        ollama_url,
         json={
             "model": "llama3.2",
             "prompt": prompt,
-            "stream": False
-        }
+            "stream": False,
+        },
+        timeout=120,
     )
+
+    response.raise_for_status()
 
     result = response.json()
 
     return {
-        "response": result["response"]
+        "response": result.get(
+            "response",
+            "Sorry, I couldn't generate a response."
+        )
     }
