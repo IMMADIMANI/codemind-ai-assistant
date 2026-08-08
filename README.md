@@ -217,26 +217,8 @@ The FastAPI backend is deployed separately and communicates with the React front
 
 ---
 
-# 📸 Screenshots
-
-Add screenshots of the live CodeMind application here.
-
-Example:
-
-```text
-docs/
-├── dashboard.png
-├── ai-chat.png
-└── code-analysis.png
-```
-
-Then add them to the README:
-
-```markdown
-![CodeMind Dashboard](docs/dashboard.png)
-```
-
----
+<img width="1903" height="897" alt="Screenshot 2026-08-07 143034" src="https://github.com/user-attachments/assets/95b92107-693c-4143-b2be-458abdfc1077" />
+<img width="1165" height="722" alt="Screenshot 2026-08-07 234408" src="https://github.com/user-attachments/assets/39719e51-3ab3-4809-9cc2-2dc0737068fd" />
 
 # 🔮 Future Improvements
 
