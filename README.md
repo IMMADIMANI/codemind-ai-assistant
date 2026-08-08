@@ -2,75 +2,79 @@
 
 > An AI-powered developer workspace that helps developers write, debug, analyze, and understand code using Groq's ultra-fast Llama models.
 
-![License](https://img.shields.io/badge/License-MIT-blue.svg)
-![React](https://img.shields.io/badge/Frontend-React%20+%20Vite-61DAFB)
-![FastAPI](https://img.shields.io/badge/Backend-FastAPI-009688)
-![Groq](https://img.shields.io/badge/AI-Groq-orange)
-![Deployment](https://img.shields.io/badge/Deployment-Vercel%20%7C%20Render-success)
-
 ---
 
 ## 🌐 Live Demo
 
-**Frontend:** https://your-vercel-url.vercel.app
+### 🚀 [Try CodeMind Live](https://codemind-ai-assistant.vercel.app/)
 
-**Backend API:** https://your-render-url.onrender.com
+**Frontend:** https://codemind-ai-assistant.vercel.app/
+
+**Backend API:** `https://your-render-url.onrender.com`
+
+> CodeMind is fully deployed with the frontend hosted on Vercel and the backend hosted on Render.
 
 ---
 
 # 📖 Overview
 
-CodeMind is an AI-powered developer assistant designed to improve coding productivity.
+**CodeMind** is an AI-powered developer assistant designed to improve coding productivity.
 
-It allows developers to:
-<img width="1600" height="754" alt="WhatsApp Image 2026-08-07 at 14 31 03" src="https://github.com/user-attachments/assets/ddc9597c-2a93-4c9d-b13e-0e81442d470f" />
+It provides developers with an interactive workspace for programming assistance, code analysis, debugging, documentation generation, and AI-powered project knowledge search.
 
-- 💬 Chat with AI for programming help
-- 🔍 Analyze and explain code
-- 🐞 Debug errors
-- 📝 Generate documentation
-- 📂 Search project knowledge using RAG
-- ⚡ Get fast AI responses powered by Groq Llama
+### What CodeMind can do
 
-The project is built with a modern full-stack architecture using React, FastAPI, and Groq AI.
+* 💬 Chat with AI for programming assistance
+* 🔍 Analyze and explain code
+* 🐞 Identify and debug coding issues
+* 📝 Generate documentation
+* 📂 Search project knowledge using RAG
+* ⚡ Generate fast AI responses using Groq and Llama
+
+The application is built using a modern full-stack architecture with **React, FastAPI, and Groq AI** and is deployed to the cloud.
 
 ---
 
 # ✨ Features
-<img width="868" height="255" alt="Screenshot 2026-08-07 225253" src="https://github.com/user-attachments/assets/ac6ad69a-a62a-4334-ab3f-23eab7c64ec4" />
 
-<img width="1165" height="722" alt="Screenshot 2026-08-07 234408" src="https://github.com/user-attachments/assets/77e8e010-5c5a-47d2-b983-8d8017fa27be" />
-
-- 🤖 AI Chat Assistant
-- 🧠 Code Analysis
-- 🐞 Bug Detection
-- 📄 Documentation Generator
-- 📂 RAG Search
-- ⚡ Ultra Fast AI Responses
-- 🌙 Modern Dark UI
-- 📱 Responsive Design
-- 🔒 Secure API Integration
-- ☁️ Fully Cloud Deployed
+* 🤖 AI Chat Assistant
+* 🧠 Code Analysis
+* 🐞 Bug Detection & Debugging
+* 📄 Documentation Generator
+* 📂 RAG-based Knowledge Search
+* ⚡ Fast AI Inference with Groq
+* 🌙 Modern Dark UI
+* 📱 Responsive Design
+* 🔐 Secure API Key Management
+* ☁️ Cloud Deployment
 
 ---
 
 # 🏗️ Architecture
 
-```
-                 🌐 Vercel
-                     │
-                     ▼
-            React + Vite Frontend
-                     │
-          REST API (Axios/Fetch)
-                     │
-                     ▼
-              FastAPI Backend
-                     │
-          Prompt Engineering Layer
-                     │
-                     ▼
-             Groq Llama AI Model
+```text
+                    🌐 Vercel
+                       │
+                       ▼
+              ⚛️ React + Vite
+                  Frontend
+                       │
+                       │ REST API
+                       ▼
+                 ☁️ Render
+                       │
+                       ▼
+                ⚡ FastAPI
+                  Backend
+                       │
+                       ▼
+            🧠 AI / Prompt Layer
+                       │
+                       ▼
+              🤖 Groq API
+                       │
+                       ▼
+                Llama Model
 ```
 
 ---
@@ -79,34 +83,38 @@ The project is built with a modern full-stack architecture using React, FastAPI,
 
 ## Frontend
 
-- React
-- Vite
-- JavaScript
-- HTML5
-- CSS3
+* React.js
+* Vite
+* JavaScript
+* HTML5
+* CSS3
 
 ## Backend
 
-- FastAPI
-- Python
-- Uvicorn
-- Pydantic
+* Python
+* FastAPI
+* Uvicorn
+* Pydantic
+* REST APIs
 
 ## AI
 
-- Groq API
-- Llama Model
+* Groq API
+* Llama Models
+* Prompt Engineering
+* RAG
 
 ## Deployment
 
-- Frontend → Vercel
-- Backend → Render
+* Vercel — Frontend
+* Render — Backend
+* GitHub — Version Control
 
 ---
 
 # 📂 Project Structure
 
-```
+```text
 CodeMind/
 │
 ├── frontend/
@@ -128,17 +136,17 @@ CodeMind/
 
 # ⚙️ Installation
 
-## Clone Repository
+## 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/codemind.git
+git clone https://github.com/IMMADIMANI/codemind.git
 
 cd codemind
 ```
 
 ---
 
-## Frontend
+## 2. Frontend Setup
 
 ```bash
 cd frontend
@@ -148,9 +156,11 @@ npm install
 npm run dev
 ```
 
+The frontend will run locally using the Vite development server.
+
 ---
 
-## Backend
+## 3. Backend Setup
 
 ```bash
 cd backend
@@ -160,52 +170,87 @@ pip install -r requirements.txt
 uvicorn main:app --reload
 ```
 
+The FastAPI backend will be available locally.
+
 ---
 
 # 🔑 Environment Variables
 
-Create a `.env` file inside the backend folder.
+Create a `.env` file inside the `backend` directory:
 
 ```env
 GROQ_API_KEY=your_groq_api_key
 ```
 
----
-
-# 🚀 Deployment
-
-## Frontend
-
-- Hosted on **Vercel**
-
-## Backend
-
-- Hosted on **Render**
+> ⚠️ Never commit your `.env` file or expose your API keys publicly.
 
 ---
 
 # 📡 API Endpoints
 
-| Method | Endpoint | Description |
-|---------|----------|-------------|
-| POST | `/chat` | AI Chat |
-| POST | `/analyze` | Analyze Code |
-| POST | `/rag/search` | Search Documents |
-| GET | `/health` | Health Check |
+| Method | Endpoint      | Description      |
+| ------ | ------------- | ---------------- |
+| `POST` | `/chat`       | AI Chat          |
+| `POST` | `/analyze`    | Analyze Code     |
+| `POST` | `/rag/search` | Search Documents |
+| `GET`  | `/health`     | Health Check     |
 
+---
+
+# 🚀 Deployment
+
+CodeMind is deployed using a modern cloud architecture.
+
+### Frontend
+
+**Vercel**
+
+Live application:
+
+👉 https://codemind-ai-assistant.vercel.app/
+
+### Backend
+
+**Render**
+
+The FastAPI backend is deployed separately and communicates with the React frontend through REST APIs.
+
+---
+
+# 📸 Screenshots
+
+Add screenshots of the live CodeMind application here.
+
+Example:
+
+```text
+docs/
+├── dashboard.png
+├── ai-chat.png
+└── code-analysis.png
+```
+
+Then add them to the README:
+
+```markdown
+![CodeMind Dashboard](docs/dashboard.png)
+```
+
+---
 
 # 🔮 Future Improvements
 
-- Voice Assistant
-- Multiple AI Models
-- Authentication
-- Chat History
-- File Upload
-- GitHub Integration
-- Theme Customization
-- Docker Support
-- Unit Testing
-- CI/CD Pipeline
+* 🔐 User Authentication
+* 💾 Persistent Chat History
+* 📁 File & Code Upload
+* 🐙 GitHub Repository Integration
+* 🎙️ Voice Assistant
+* 🧠 Multiple AI Models
+* 🎨 Theme Customization
+* 🐳 Docker Support
+* 🧪 Automated Unit Testing
+* ⚙️ CI/CD Pipeline
+* 📊 Usage Analytics
 
 ---
 
@@ -213,50 +258,49 @@ GROQ_API_KEY=your_groq_api_key
 
 Contributions are welcome!
 
-1. Fork the repository
-2. Create a new branch
+### 1. Fork the repository
+
+### 2. Create a new branch
 
 ```bash
 git checkout -b feature-name
 ```
 
-3. Commit changes
+### 3. Commit your changes
 
 ```bash
-git commit -m "Added new feature"
+git add .
+git commit -m "Add new feature"
 ```
 
-4. Push
+### 4. Push your branch
 
 ```bash
 git push origin feature-name
 ```
 
-5. Open a Pull Request
+### 5. Open a Pull Request
 
 ---
 
 # 👨‍💻 Author
 
-**IMMADI MANIKANTA**
+## IMMADI MANIKANTA
 
-GitHub: https://github.com/IMMADIMANI
+🎓 B.Tech Computer Science & Engineering — VIT Vellore
 
-LinkedIn: https://www.linkedin.com/in/manikanta-immadi-304059273/
+🔗 **GitHub:** https://github.com/IMMADIMANI
+
+🔗 **LinkedIn:** https://www.linkedin.com/in/manikanta-immadi-304059273/
 
 ---
 
 # ⭐ Support
 
-If you like this project, consider giving it a ⭐ on GitHub!
+If you find CodeMind useful, consider giving the repository a ⭐ on GitHub!
 
 ---
 
 ## 💡 Built With
 
-- React
-- FastAPI
-- Groq
-- Llama
-- Vercel
-- Render
+**React • Vite • FastAPI • Python • Groq • Llama • Vercel • Render**
